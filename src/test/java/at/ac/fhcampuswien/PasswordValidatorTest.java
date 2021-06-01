@@ -53,4 +53,16 @@ public class PasswordValidatorTest {
     public void testPasswordOnlyUpperCase(){
         assertFalse(pw.checkPassword("ABCDEFGHIJ"));
     }
+
+    @Test
+    @DisplayName("Has password numbers")
+    public void testPasswordIncludeNumbers(){
+        assertTrue(pw.checkPassword("A1!b2$C3%d4@"));
+    }
+
+    @Test
+    @DisplayName("Has password no numbers")
+    public void testPasswordNoNumbers(){
+        assertFalse(pw.checkPassword("AbCdEfGhIj"));
+    }
 }
