@@ -36,4 +36,10 @@ public class PasswordValidatorTest {
         assertFalse(pw.checkPassword("123456789...............26"));
     }
 
+    @Test
+    @DisplayName("Has password upper and lower case")
+    public void testPasswordUpperAndLowerCase(){
+        assertTrue(pw.checkPassword("AAAbbbCdEfGhIj"));
+    }
+
 }
