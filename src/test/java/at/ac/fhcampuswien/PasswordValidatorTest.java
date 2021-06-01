@@ -42,4 +42,10 @@ public class PasswordValidatorTest {
         assertTrue(pw.checkPassword("AAAbbbCdEfGhIj"));
     }
 
+    @Test
+    @DisplayName("Has password only lower case")
+    public void testPasswordOnlyLowerCase(){
+        assertFalse(pw.checkPassword("abcdefghij"));
+    }
+
 }
