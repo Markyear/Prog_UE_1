@@ -83,4 +83,10 @@ public class PasswordValidatorTest {
     public void testPasswordNoSpecialCharacters(){
         assertFalse(pw.checkPassword("A1b2C3d4E5"));
     }
+
+    @Test
+    @DisplayName("Has password no consecutive numbers")
+    public void testPasswordNoConsecutiveNumbers(){
+        assertFalse(pw.checkPassword("Ab1()#$?!%/@"));
+    }
 }
