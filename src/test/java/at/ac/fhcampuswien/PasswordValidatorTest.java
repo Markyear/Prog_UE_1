@@ -89,4 +89,10 @@ public class PasswordValidatorTest {
     public void testPasswordNoConsecutiveNumbers(){
         assertTrue(pw.checkPassword("Ab1()#$?!%/@"));
     }
+
+    @Test
+    @DisplayName("Has password two than three consecutive numbers")
+    public void testPasswordHasConsecutiveNumbers(){
+        assertFalse(pw.checkPassword("#$?!%/@"));
+    }
 }
