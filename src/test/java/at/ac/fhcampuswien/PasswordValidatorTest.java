@@ -95,4 +95,9 @@ public class PasswordValidatorTest {
     public void testPasswordHasConsecutiveNumbers(){
         assertFalse(pw.checkPassword("#$?!%/@"));
     }
+    @Test
+    @DisplayName("Has password more than two of the same digits in a row")
+    public void testPasswordMoreThanTwoRepeatingDigits(){
+        assertTrue(pw.checkPassword("Ab1()#$?!%/@1111"));
+    }
 }
