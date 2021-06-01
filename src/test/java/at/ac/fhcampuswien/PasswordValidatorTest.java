@@ -22,4 +22,13 @@ public class PasswordValidatorTest {
         assertTrue(pw.checkPassword("A1!b2$C3%d4@"));
     }
 
+    @Test
+    @DisplayName("Has password length less than 8 characters")
+    public void testPasswordLengthInvalidUnder_8(){
+        //PasswordValidator pw = new PasswordValidator();
+        assertFalse(pw.checkPassword("1234567"));
+    }
+
+
+
 }
