@@ -29,6 +29,11 @@ public class PasswordValidatorTest {
         assertFalse(pw.checkPassword("1234567"));
     }
 
-
+    @Test
+    @DisplayName("Has password length more than 25 characters")
+    public void testPasswordLengthInvalidOver_25(){
+        //PasswordValidator pw = new PasswordValidator();
+        assertFalse(pw.checkPassword("123456789...............26"));
+    }
 
 }
