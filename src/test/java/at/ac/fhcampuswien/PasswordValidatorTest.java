@@ -39,7 +39,7 @@ public class PasswordValidatorTest {
     @Test
     @DisplayName("Has password upper and lower case")
     public void testPasswordUpperAndLowerCase(){
-        assertTrue(pw.checkPassword("AAAbbbCdEfGhIj"));
+        assertTrue(pw.checkPassword("A1!b2$C3%d4@"));
     }
 
     @Test
@@ -48,4 +48,9 @@ public class PasswordValidatorTest {
         assertFalse(pw.checkPassword("abcdefghij"));
     }
 
+    @Test
+    @DisplayName("Has password only upper case")
+    public void testPasswordOnlyUpperCase(){
+        assertFalse(pw.checkPassword("ABCDEFGHIJ"));
+    }
 }
