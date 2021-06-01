@@ -68,13 +68,19 @@ public class PasswordValidatorTest {
 
     @Test
     @DisplayName("Has password special characters")
-    public void testPasswordHasSpecialCharacters(){
+    public void testPasswordSpecialCharacters(){
         assertTrue(pw.checkPassword("Ab1()#$?!%/@"));
     }
 
     @Test
     @DisplayName("Has password invalid special characters")
-    public void testPasswordHasInvalidSpecialCharacters(){
+    public void testPasswordInvalidSpecialCharacters(){
         assertFalse(pw.checkPassword("A1!b2$C3%§&,.)"));
+    }
+
+    @Test
+    @DisplayName("Has password no special characters")
+    public void testPasswordNoSpecialCharacters(){
+        assertFalse(pw.checkPassword("A1b2C3d4E5"));
     }
 }
