@@ -57,7 +57,7 @@ public class PasswordValidatorTest {
     @Test
     @DisplayName("Has password numbers")
     public void testPasswordIncludeNumbers(){
-        assertTrue(pw.checkPassword("A!b$C%d@0123456789"));
+        assertTrue(pw.checkPassword("A!b$C%d@013579"));
     }
 
     @Test
@@ -91,8 +91,9 @@ public class PasswordValidatorTest {
     }
 
     @Test
-    @DisplayName("Has password two than three consecutive numbers")
+    @DisplayName("Has password more than two consecutive numbers")
     public void testPasswordHasConsecutiveNumbers(){
         assertFalse(pw.checkPassword("#$?!%/@"));
     }
+
 }
